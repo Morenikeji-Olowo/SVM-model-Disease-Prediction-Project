@@ -1,0 +1,1 @@
+# SVM-model-Disease-Prediction-Project
