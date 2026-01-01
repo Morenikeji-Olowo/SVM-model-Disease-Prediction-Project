@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AI Health</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="diabetes.html">Diabetes</a></li>
+            <li><a href="cancer.html">Breast Cancer</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>        
+    </nav>
+    <section class="page-header">
+        <h1>Diabetes Prediction</h1>
+        <p>
+            Enter patient medical details below to predict the likelihood of diabetes using a trained SVM model.
+        </p>
+    </section>
+    <section class="section light">
+        <div class="form-card">
+            <h2>Patient Medical Data</h2>
+            <form id="diabetesForm">
+                <div class="form-group">
+                    <label>Pregnancies</label>
+                    <input type="number" required>
+                </div>
+                <div class="form-group">
+                    <label>Glucose Level</label>
+                    <input type="number" required>
+                </div>
+                <div class="form-group">
+                    <label>Blood Pressure</label>
+                    <input type="number" required>
+                </div>
+                <div class="form-group">
+                    <label>Skin Thickness</label>
+                    <input type="number">
+                </div>
+                <div class="form-group">
+                    <label>Insulin</label>
+                    <input type="number">
+                </div>
+                <div class="form-group">
+                    <label>BMI</label>
+                    <input type="number" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Diabetes Pedigree Function</label>
+                    <input type="number" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" required>
+                </div>
+                <button type="submit" class="btn primary full">
+                    Predict Diabetes
+                </button>
+            </form>
+            <div class="result-box">
+                Prediction Result will appear here
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <p>AI Health Prediction System • Diabetes Module</p>
+    </footer>
+</body>
+</html>

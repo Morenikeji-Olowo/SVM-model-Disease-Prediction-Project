@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer Prediction</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AI Health</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="diabetes.html">Diabetes</a></li>
+            <li><a href="cancer.html">Breast Cancer</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <section class="page-header cancer-header">
+        <h1>Breast Cancer Prediction</h1>
+        <p>
+            Enter tumor characteristics to classify breast cancer as benign or malignant using an SVM-based model.
+        </p>
+    </section>
+    <section class="section light">
+        <div class="form-card">
+
+            <h2>Tumor Feature Input</h2>
+
+            <form id="cancerForm">
+
+                <div class="form-group">
+                    <label>Mean Radius</label>
+                    <input type="number" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mean Texture</label>
+                    <input type="number" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mean Perimeter</label>
+                    <input type="number" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mean Area</label>
+                    <input type="number" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mean Smoothness</label>
+                    <input type="number" step="0.0001" required>
+                </div>
+
+                <button type="submit" class="btn primary full">
+                    Predict Breast Cancer
+                </button>
+
+            </form>
+            <div class="result-box">
+                Prediction Result will appear here
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <p>AI Health Prediction System • Breast Cancer Module</p>
+    </footer>
+
+</body>
+</html>
