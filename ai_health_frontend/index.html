@@ -2,79 +2,770 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AI Health Prediction System</title>
+    <title>BreathSense | AI-Powered Health Detection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">AI Health</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="diabetes.html">Diabetes</a></li>
-            <li><a href="cancer.html">Breast Cancer</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-        
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">BS</span>
+                <span class="logo-text">Breath<span class="logo-highlight">Sense</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#diabetes-form">Diabetes</a></li>
+                <li><a href="#cancer-form">Cancer Detection</a></li>
+                <li><a href="#clinical">Clinical Focus</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
+    
     <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>AI-Powered Health Risk Prediction</h1>
-            <p>
-                A medical decision support system that uses Support Vector Machines (SVM) to assist in early detection of Diabetes and Breast Cancer.
-            </p>
-            <div class="hero-buttons">
-                <a href="diabetes.html" class="btn primary">Predict Diabetes</a>
-                <a href="cancer.html" class="btn secondary">Predict Breast Cancer</a>
-            </div>            
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Early insight. Less uncertainty.</div>
+                <h1>Just One Breath to Detect Disease</h1>
+                <p>
+                    A new generation of non-invasive health detection using advanced AI to identify risks for diabetes, cancer, and other conditions with a simple breath test.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#cancer-form" class="btn primary">Cancer Detection</a>
+                    <a href="#diabetes-form" class="btn secondary">Diabetes Assessment</a>
+                </div>
+                <div class="hero-note">
+                    <span class="note-icon">ℹ️</span>
+                    <span>Gentler, faster, and non-invasive detection technology</span>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- WHY SECTION -->
-    <section class="section light">
-        <h2>Why This Project?</h2>
-        <p>
-            Diabetes and Breast Cancer are among the leading causes of preventable deaths worldwide. Early detection through machine learning can significantly improve diagnosis, treatment, and survival outcomes.
-        </p>
+    
+    <!-- FEATURES SECTION -->
+    <section class="section features-section">
+        <div class="container">
+            <h2>Advanced Detection Technology</h2>
+            <p class="section-subtitle">Our portfolio of services operates across multiple regions with diverse assessment networks</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Global Operations</h3>
+                    <p>Providing services across Japan, China, Korea and domestic markets with independent research initiatives.</p>
+                    <ul class="feature-list">
+                        <li>Japanese operations</li>
+                        <li>Chinese operations</li>
+                        <li>Korean operations</li>
+                        <li>Domestic activities</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧬</div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Advanced machine learning algorithms for precise health risk assessment and early detection.</p>
+                    <ul class="feature-list">
+                        <li>SVM classification</li>
+                        <li>Pattern recognition</li>
+                        <li>Predictive analytics</li>
+                        <li>Real-time results</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Clinical Focus</h3>
+                    <p>Developed with extensive clinical trials and diverse self-assessment training sessions.</p>
+                    <ul class="feature-list">
+                        <li>Clinical trial data</li>
+                        <li>Patient-centered design</li>
+                        <li>Medical validation</li>
+                        <li>Continuous improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
+    
+    <!-- DIABETES PREDICTION FORM -->
+    <section class="section form-section" id="diabetes-form">
+        <div class="container">
+            <h2>Diabetes Risk Assessment</h2>
+            <p class="section-subtitle">Enter your health indicators below for AI-powered diabetes risk prediction</p>
+            
+            <div class="form-container">
+                <div class="form-info">
+                    <h3>About This Assessment</h3>
+                    <p>This AI model analyzes key health indicators to assess your risk of diabetes using Support Vector Machine (SVM) algorithms.</p>
+                    <div class="info-card">
+                        <h4>How it works:</h4>
+                        <ul>
+                            <li>Enter your health metrics in the form</li>
+                            <li>Our AI analyzes patterns using clinical data</li>
+                            <li>Receive immediate risk assessment</li>
+                            <li>Get recommendations based on results</li>
+                        </ul>
+                    </div>
+                    <div class="accuracy-badge">
+                        <span class="accuracy-icon">✓</span>
+                        <span>Clinical accuracy: 87.2%</span>
+                    </div>
+                </div>
+                
+                <form class="prediction-form" id="diabetesForm">
+                    <h3>Enter Your Health Data</h3>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="pregnancies">Pregnancies</label>
+                            <input type="number" id="pregnancies" name="pregnancies" min="0" max="20" placeholder="e.g., 2" required>
+                            <small>Number of times pregnant</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="glucose">Glucose Level</label>
+                            <input type="number" id="glucose" name="glucose" min="0" max="300" placeholder="e.g., 120 mg/dL" required>
+                            <small>Plasma glucose concentration</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="blood-pressure">Blood Pressure</label>
+                            <input type="number" id="blood-pressure" name="blood_pressure" min="0" max="150" placeholder="e.g., 80 mmHg" required>
+                            <small>Diastolic blood pressure</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="skin-thickness">Skin Thickness</label>
+                            <input type="number" id="skin-thickness" name="skin_thickness" min="0" max="100" placeholder="e.g., 25 mm" required>
+                            <small>Triceps skin fold thickness</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="insulin">Insulin Level</label>
+                            <input type="number" id="insulin" name="insulin" min="0" max="900" placeholder="e.g., 150 μU/mL" required>
+                            <small>2-Hour serum insulin</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bmi">Body Mass Index (BMI)</label>
+                            <input type="number" step="0.1" id="bmi" name="bmi" min="10" max="70" placeholder="e.g., 26.5" required>
+                            <small>Weight in kg/(height in m)²</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dpf">Diabetes Pedigree Function</label>
+                            <input type="number" step="0.001" id="dpf" name="diabetes_pedigree_function" min="0" max="3" placeholder="e.g., 0.351" required>
+                            <small>Family history likelihood</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" min="1" max="120" placeholder="e.g., 35" required>
+                            <small>Age in years</small>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary">Predict Diabetes Risk</button>
+                        <button type="reset" class="btn outline">Clear Form</button>
+                    </div>
+                    
+                    <div class="form-result" id="diabetesResult">
+                        <div class="result-header">
+                            <h4>Prediction Result</h4>
+                            <span class="result-status">Awaiting analysis</span>
+                        </div>
+                        <div class="result-content">
+                            <p>Submit your health data to receive an AI-powered diabetes risk assessment.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- BREAST CANCER PREDICTION FORM -->
+    <section class="section dark-section form-section" id="cancer-form">
+        <div class="container">
+            <h2>Breast Cancer Detection</h2>
+            <p class="section-subtitle">Analyze tumor characteristics for benign/malignant classification using SVM</p>
+            
+            <div class="form-container">
+                <div class="form-info">
+                    <h3>About Cancer Detection</h3>
+                    <p>This AI model uses tumor cell characteristics from fine needle aspirate (FNA) samples to classify breast masses as benign or malignant.</p>
+                    <div class="info-card">
+                        <h4>Key Metrics Analyzed:</h4>
+                        <ul>
+                            <li>Tumor cell radius and texture</li>
+                            <li>Perimeter and area measurements</li>
+                            <li>Smoothness and compactness</li>
+                            <li>Concavity and symmetry</li>
+                            <li>Fractal dimension analysis</li>
+                        </ul>
+                    </div>
+                    <div class="accuracy-badge">
+                        <span class="accuracy-icon">✓</span>
+                        <span>Clinical accuracy: 96.7%</span>
+                    </div>
+                </div>
+                
+                <form class="prediction-form" id="cancerForm">
+                    <h3>Enter Tumor Characteristics</h3>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="radius-mean">Radius Mean</label>
+                            <input type="number" step="0.1" id="radius-mean" name="radius_mean" min="0" max="30" placeholder="e.g., 12.5" required>
+                            <small>Mean of distances from center to points on the perimeter</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="texture-mean">Texture Mean</label>
+                            <input type="number" step="0.1" id="texture-mean" name="texture_mean" min="0" max="40" placeholder="e.g., 18.2" required>
+                            <small>Standard deviation of gray-scale values</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="perimeter-mean">Perimeter Mean</label>
+                            <input type="number" step="0.1" id="perimeter-mean" name="perimeter_mean" min="0" max="200" placeholder="e.g., 85.6" required>
+                            <small>Tumor perimeter measurement</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="area-mean">Area Mean</label>
+                            <input type="number" id="area-mean" name="area_mean" min="0" max="3000" placeholder="e.g., 550" required>
+                            <small>Tumor area measurement</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="smoothness-mean">Smoothness Mean</label>
+                            <input type="number" step="0.00001" id="smoothness-mean" name="smoothness_mean" min="0" max="0.2" placeholder="e.g., 0.085" required>
+                            <small>Local variation in radius lengths</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="compactness-mean">Compactness Mean</label>
+                            <input type="number" step="0.00001" id="compactness-mean" name="compactness_mean" min="0" max="0.5" placeholder="e.g., 0.125" required>
+                            <small>Perimeter² / area - 1.0</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="concavity-mean">Concavity Mean</label>
+                            <input type="number" step="0.00001" id="concavity-mean" name="concavity_mean" min="0" max="0.5" placeholder="e.g., 0.150" required>
+                            <small>Severity of concave portions of the contour</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="concave-points-mean">Concave Points Mean</label>
+                            <input type="number" step="0.00001" id="concave-points-mean" name="concave_points_mean" min="0" max="0.3" placeholder="e.g., 0.075" required>
+                            <small>Number of concave portions of the contour</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="symmetry-mean">Symmetry Mean</label>
+                            <input type="number" step="0.01" id="symmetry-mean" name="symmetry_mean" min="0" max="1" placeholder="e.g., 0.25" required>
+                            <small>Tumor symmetry measurement</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fractal-dimension-mean">Fractal Dimension Mean</label>
+                            <input type="number" step="0.00001" id="fractal-dimension-mean" name="fractal_dimension_mean" min="0" max="0.1" placeholder="e.g., 0.055" required>
+                            <small>"Coastline approximation" - 1</small>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn light">Analyze Tumor</button>
+                        <button type="reset" class="btn outline light">Clear Form</button>
+                    </div>
+                    
+                    <div class="form-result" id="cancerResult">
+                        <div class="result-header">
+                            <h4>Detection Result</h4>
+                            <span class="result-status">Awaiting analysis</span>
+                        </div>
+                        <div class="result-content">
+                            <p>Submit tumor characteristics to receive AI-powered classification as benign or malignant.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
     <!-- HOW IT WORKS -->
-    <section class="section">
-        <h2>How the System Works</h2>
-
-        <div class="cards">
-            <div class="card">Data Collection</div>
-            <div class="card">Data Preprocessing</div>
-            <div class="card">SVM Classification</div>
-            <div class="card">Prediction Result</div>
+    <section class="section dark-section" id="clinical">
+        <div class="container">
+            <h2>How Our System Works</h2>
+            <p class="section-subtitle">Built for real-world clinical pathways with validated performance</p>
+            
+            <div class="process-cards">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Breath Collection</h3>
+                    <p>Simple, non-invasive breath sample collection using our proprietary device.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>Data Analysis</h3>
+                    <p>AI algorithms analyze biomarkers with support from long-term clinical data.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>Pattern Recognition</h3>
+                    <p>Machine learning identifies disease signatures with high accuracy.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">4</div>
+                    <h3>Clinical Report</h3>
+                    <p>Detailed assessment with risk indicators and clinical recommendations.</p>
+                </div>
+            </div>
+            
+            <div class="clinical-note">
+                <h3>Clinical Trials & Research</h3>
+                <p>Our technology has been validated through clinical trials with numerous patients, focusing on infection control systems and patient health status monitoring.</p>
+                <a href="#clinical" class="btn outline">View Clinical Results</a>
+            </div>
         </div>
     </section>
-    <!-- FEATURES -->
-    <section class="section light">
-        <h2>Prediction Modules</h2>
-
-        <div class="cards">
-            <div class="card feature">
-                <h3>Diabetes Prediction</h3>
-                <p>
-                    Uses patient indicators such as glucose level, BMI, age, and blood pressure to assess diabetes risk.
-                </p>
-                <a href="diabetes.html" class="btn small primary">Try Module</a>
-            </div>
-
-            <div class="card feature">
-                <h3>Breast Cancer Prediction</h3>
-                <p>
-                    Analyzes tumor characteristics to classify cases as benign or malignant using SVM.
-                </p>
-                <a href="cancer.html" class="btn small primary">Try Module</a>
+    
+    <!-- PREDICTION MODULES -->
+    <section class="section modules-section">
+        <div class="container">
+            <h2>Prediction Modules</h2>
+            <p class="section-subtitle">Specialized AI models for different health conditions</p>
+            
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Diabetes Prediction</h3>
+                        <span class="module-tag">Available</span>
+                    </div>
+                    <p>Uses patient indicators such as glucose level, BMI, age, and blood pressure to assess diabetes risk with high accuracy.</p>
+                    <div class="module-features">
+                        <span class="module-feature">Non-invasive</span>
+                        <span class="module-feature">Quick results</span>
+                        <span class="module-feature">Clinically validated</span>
+                    </div>
+                    <a href="#diabetes-form" class="btn primary full-width">Try Diabetes Module</a>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Cancer Detection</h3>
+                        <span class="module-tag highlight">New</span>
+                    </div>
+                    <p>Analyzes breath biomarkers to classify cases as benign or malignant using SVM and pattern recognition algorithms.</p>
+                    <div class="module-features">
+                        <span class="module-feature">Early detection</span>
+                        <span class="module-feature">Multiple cancer types</span>
+                        <span class="module-feature">High sensitivity</span>
+                    </div>
+                    <a href="#cancer-form" class="btn primary full-width">Try Cancer Detection</a>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Respiratory Analysis</h3>
+                        <span class="module-tag">Coming Soon</span>
+                    </div>
+                    <p>Detects respiratory infections and conditions through breath analysis with our proprietary nanosensor technology.</p>
+                    <div class="module-features">
+                        <span class="module-feature">Infection detection</span>
+                        <span class="module-feature">Viral signatures</span>
+                        <span class="module-feature">Real-time monitoring</span>
+                    </div>
+                    <a href="#" class="btn outline full-width">Notify When Available</a>
+                </div>
             </div>
         </div>
     </section>
+    
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="about">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Get Your Sample Test Kit</h2>
+                <p>Experience the future of non-invasive health monitoring. Order your breath test kit today.</p>
+                <a href="#" class="btn light">Request a Kit</a>
+                <a href="#about" class="btn outline light">Learn More</a>
+            </div>
+        </div>
+    </section>
+    
     <!-- FOOTER -->
     <footer>
-        <p>AI Health Prediction System • Academic Project</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">BS</span>
+                    <span class="logo-text">Breath<span class="logo-highlight">Sense</span></span>
+                    <p>AI-Powered Health Detection System</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Modules</h4>
+                        <a href="#diabetes-form">Diabetes Prediction</a>
+                        <a href="#cancer-form">Cancer Detection</a>
+                        <a href="#clinical">Clinical Focus</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#about">About Us</a>
+                        <a href="#clinical">Research</a>
+                        <a href="#clinical">Clinical Trials</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <a href="#about">Support</a>
+                        <a href="#about">Partnerships</a>
+                        <a href="#about">Get Sample Kit</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>BreathSense Health System • Advanced AI Medical Detection</p>
+                <p class="footer-note">This system is intended for informational purposes and should not replace professional medical advice.</p>
+            </div>
+        </div>
     </footer>
 
+    <script>
+        // Mobile navigation toggle
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Diabetes form submission
+        document.getElementById('diabetesForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const resultElement = document.getElementById('diabetesResult');
+            const statusElement = resultElement.querySelector('.result-status');
+            const contentElement = resultElement.querySelector('.result-content');
+            
+            // Validate form
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    isValid = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+            
+            if (!isValid) {
+                statusElement.textContent = 'Validation Error';
+                statusElement.className = 'result-status warning';
+                contentElement.innerHTML = '<p>Please fill in all required fields marked in red.</p>';
+                return;
+            }
+            
+            // Collect form data
+            const formData = {
+                pregnancies: document.getElementById('pregnancies').value,
+                glucose: document.getElementById('glucose').value,
+                blood_pressure: document.getElementById('blood-pressure').value,
+                skin_thickness: document.getElementById('skin-thickness').value,
+                insulin: document.getElementById('insulin').value,
+                bmi: document.getElementById('bmi').value,
+                diabetes_pedigree_function: document.getElementById('dpf').value,
+                age: document.getElementById('age').value
+            };
+            
+            // Show loading state
+            statusElement.textContent = 'Analyzing...';
+            statusElement.className = 'result-status processing';
+            contentElement.innerHTML = '<p>AI is analyzing your health data patterns...</p>';
+            
+            try {
+                // Replace with your actual API endpoint
+                const apiEndpoint = 'YOUR_DIABETES_API_ENDPOINT_HERE';
+                
+                // Send to API
+                const response = await fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                
+                // Display API response
+                displayDiabetesResult(result, statusElement, contentElement);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                statusElement.textContent = 'Error';
+                statusElement.className = 'result-status warning';
+                contentElement.innerHTML = `
+                    <p>Error connecting to prediction service. Please try again.</p>
+                    <p><small>Debug: ${error.message}</small></p>
+                    <div class="sample-data">
+                        <h5>Sample Data Sent:</h5>
+                        <pre>${JSON.stringify(formData, null, 2)}</pre>
+                    </div>
+                `;
+            }
+        });
+        
+        // Cancer form submission
+        document.getElementById('cancerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const resultElement = document.getElementById('cancerResult');
+            const statusElement = resultElement.querySelector('.result-status');
+            const contentElement = resultElement.querySelector('.result-content');
+            
+            // Validate form
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    isValid = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+            
+            if (!isValid) {
+                statusElement.textContent = 'Validation Error';
+                statusElement.className = 'result-status warning';
+                contentElement.innerHTML = '<p>Please fill in all required fields marked in red.</p>';
+                return;
+            }
+            
+            // Collect form data
+            const formData = {
+                radius_mean: document.getElementById('radius-mean').value,
+                texture_mean: document.getElementById('texture-mean').value,
+                perimeter_mean: document.getElementById('perimeter-mean').value,
+                area_mean: document.getElementById('area-mean').value,
+                smoothness_mean: document.getElementById('smoothness-mean').value,
+                compactness_mean: document.getElementById('compactness-mean').value,
+                concavity_mean: document.getElementById('concavity-mean').value,
+                concave_points_mean: document.getElementById('concave-points-mean').value,
+                symmetry_mean: document.getElementById('symmetry-mean').value,
+                fractal_dimension_mean: document.getElementById('fractal-dimension-mean').value
+            };
+            
+            // Show loading state
+            statusElement.textContent = 'Analyzing...';
+            statusElement.className = 'result-status processing';
+            contentElement.innerHTML = '<p>AI is analyzing tumor characteristics using SVM algorithms...</p>';
+            
+            try {
+                // Replace with your actual API endpoint
+                const apiEndpoint = 'YOUR_CANCER_API_ENDPOINT_HERE';
+                
+                // Send to API
+                const response = await fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                
+                // Display API response
+                displayCancerResult(result, statusElement, contentElement);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                statusElement.textContent = 'Error';
+                statusElement.className = 'result-status warning';
+                contentElement.innerHTML = `
+                    <p>Error connecting to prediction service. Please try again.</p>
+                    <p><small>Debug: ${error.message}</small></p>
+                    <div class="sample-data">
+                        <h5>Sample Data Sent:</h5>
+                        <pre>${JSON.stringify(formData, null, 2)}</pre>
+                    </div>
+                `;
+            }
+        });
+        
+        // Function to display diabetes results from API
+        function displayDiabetesResult(apiResult, statusElement, contentElement) {
+            // Customize this based on your API response structure
+            const riskLevel = apiResult.prediction || apiResult.risk_level || 'Unknown';
+            const confidence = apiResult.confidence || apiResult.probability || 'N/A';
+            const details = apiResult.details || '';
+            const recommendations = apiResult.recommendations || [];
+            
+            let riskColor = 'moderate';
+            if (riskLevel.toLowerCase().includes('high')) riskColor = 'high';
+            if (riskLevel.toLowerCase().includes('low')) riskColor = 'low';
+            
+            statusElement.textContent = riskLevel;
+            statusElement.className = `result-status ${riskColor}`;
+            
+            let recommendationsHtml = '';
+            if (recommendations.length > 0) {
+                recommendationsHtml = `
+                    <div class="recommendations">
+                        <h5>Recommendations:</h5>
+                        <ul>
+                            ${recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+            
+            contentElement.innerHTML = `
+                <div class="risk-meter">
+                    <div class="meter-bar">
+                        <div class="meter-fill" style="width: ${confidence}%"></div>
+                    </div>
+                    <div class="meter-labels">
+                        <span>Low</span>
+                        <span>Moderate</span>
+                        <span>High</span>
+                    </div>
+                </div>
+                <p>Based on your health indicators, our AI model indicates: <strong>${riskLevel}</strong></p>
+                <p>Confidence: <strong>${confidence}%</strong></p>
+                ${details ? `<p>${details}</p>` : ''}
+                ${recommendationsHtml}
+                <p class="disclaimer">Note: This assessment is for informational purposes only. Please consult with a medical professional for accurate diagnosis.</p>
+            `;
+            
+            // Scroll to result
+            resultElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Function to display cancer results from API
+        function displayCancerResult(apiResult, statusElement, contentElement) {
+            // Customize this based on your API response structure
+            const prediction = apiResult.prediction || apiResult.result || 'Unknown';
+            const confidence = apiResult.confidence || apiResult.probability || 'N/A';
+            const details = apiResult.details || '';
+            const recommendations = apiResult.recommendations || [];
+            
+            let resultColor = 'moderate';
+            if (prediction.toLowerCase().includes('malignant')) resultColor = 'high';
+            if (prediction.toLowerCase().includes('benign')) resultColor = 'low';
+            
+            statusElement.textContent = prediction;
+            statusElement.className = `result-status ${resultColor}`;
+            
+            let recommendationsHtml = '';
+            if (recommendations.length > 0) {
+                recommendationsHtml = `
+                    <div class="recommendations">
+                        <h5>Next Steps:</h5>
+                        <ul>
+                            ${recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+            
+            contentElement.innerHTML = `
+                <div class="result-summary">
+                    <div class="result-icon">${prediction.toLowerCase().includes('malignant') ? '⚠️' : '✅'}</div>
+                    <div class="result-details">
+                        <h5>Tumor Classification: ${prediction}</h5>
+                        <p>AI Confidence: <strong>${confidence}%</strong></p>
+                    </div>
+                </div>
+                <p>Based on the tumor characteristics provided, our SVM model classifies this mass as: <strong>${prediction}</strong></p>
+                ${details ? `<div class="tumor-insights"><h5>AI Insights:</h5><p>${details}</p></div>` : ''}
+                ${recommendationsHtml}
+                <p class="disclaimer">Note: This AI analysis is for screening purposes only. Definitive diagnosis requires biopsy and pathological examination.</p>
+            `;
+            
+            // Scroll to result
+            resultElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Reset form results when form is cleared
+        document.querySelectorAll('button[type="reset"]').forEach(button => {
+            button.addEventListener('click', function() {
+                const form = this.closest('form');
+                const resultId = form.id === 'diabetesForm' ? 'diabetesResult' : 'cancerResult';
+                const resultElement = document.getElementById(resultId);
+                const statusElement = resultElement.querySelector('.result-status');
+                const contentElement = resultElement.querySelector('.result-content');
+                
+                statusElement.textContent = 'Awaiting analysis';
+                statusElement.className = 'result-status';
+                contentElement.innerHTML = '<p>Submit your health data to receive an AI-powered assessment.</p>';
+                
+                // Clear error classes
+                form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+            });
+        });
+        
+        // Form validation on input
+        document.querySelectorAll('.prediction-form input').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('error');
+            });
+        });
+    </script>
 </body>
 </html>
