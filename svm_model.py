@@ -43,7 +43,6 @@ print("\nAccuracy:", accuracy)
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
 print("\nConfusion Matrix:\n", confusion_matrix(y_test, y_pred))
 
-# 🔟 Save Model and Scaler for Future Use
 joblib.dump(model, "svm_diabetes_model.pkl", compress=3)
 joblib.dump(scaler, "scaler.pkl", compress=3)
 

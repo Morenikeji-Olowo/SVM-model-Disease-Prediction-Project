@@ -1,0 +1,42 @@
+from flask import Flask, request, jsonify
+import joblib
+import numpy as np
+
+app = Flask(__name__)
+
+model = joblib.load("svm_diabetes_model.pkl")
+scaler = joblib.load("scaler.pkl")
+
+@app.route("/predict", methods=["POST"])
+def predict():
+    try:
+        data = request.json
+
+        features = np.array([[
+            data["pregnancies"],
+            data["glucose"],
+            data["blood_pressure"],
+            data["skin_thickness"],
+            data["insulin"],
+            data["bmi"],
+            data["dpf"],
+            data["age"]
+        ]])
+
+        scaled = scaler.transform(features)
+        prediction = model.predict(scaled)[0]
+
+        return jsonify({
+            "success": True,
+            "prediction": int(prediction),
+            "result": "Likely diabetic" if prediction == 1 else "Unlikely diabetic"
+        })
+
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        })
+
+if __name__ == "__main__":
+    app.run(debug=True)
