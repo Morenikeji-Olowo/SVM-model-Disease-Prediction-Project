@@ -451,7 +451,9 @@
         </div>
     </footer>
 
-    <script>
+    <script type="module">
+        const apiEndpoint = `${import.meta.env.VITE_API_LINK}/predict`;
+
         // Mobile navigation toggle
         document.querySelector('.nav-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
@@ -528,8 +530,6 @@
             contentElement.innerHTML = '<p>AI is analyzing your health data patterns...</p>';
             
             try {
-                // Replace with your actual API endpoint
-                const apiEndpoint = `${import.meta.env.VITE_API_LINK}/predict`;
                 
                 // Send to API
                 const response = await fetch(apiEndpoint, {
@@ -546,7 +546,6 @@
                 
                 const result = await response.json();
                 
-                // Display API response
                 displayDiabetesResult(result, statusElement, contentElement);
                 
             } catch (error) {
