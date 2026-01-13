@@ -4,23 +4,17 @@ import joblib
 import numpy as np
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+
+# Enable CORS for your Vercel frontend only
+CORS(app, origins=["https://svm-phi.vercel.app"])
 
 # Load model and scaler
 model = joblib.load("svm_diabetes_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
-@app.after_request
-def add_cors_headers(response):
-    # Allow your frontend
-    response.headers["Access-Control-Allow-Origin"] = "https://svm-phi.vercel.app"
-    response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-    return response
-
 @app.route("/predict", methods=["POST", "OPTIONS"])
 def predict():
-    # Handle preflight request
+    # Preflight requests for CORS
     if request.method == "OPTIONS":
         return "", 200
 
@@ -28,20 +22,21 @@ def predict():
         data = request.json
         print("Received data:", data)  # Debug log
 
-        # Safely get each feature, provide default 0 if missing
+        # Safely extract all features and convert to float
         pregnancies = float(data.get("pregnancies", 0))
         glucose = float(data.get("glucose", 0))
         blood_pressure = float(data.get("blood_pressure", 0))
         skin_thickness = float(data.get("skin_thickness", 0))
         insulin = float(data.get("insulin", 0))
         bmi = float(data.get("bmi", 0))
-        # Handle either key: dpf or diabetes_pedigree_function
+        # Accept either dpf or diabetes_pedigree_function
         dpf = float(data.get("dpf", data.get("diabetes_pedigree_function", 0)))
         age = float(data.get("age", 0))
 
         features = np.array([[pregnancies, glucose, blood_pressure, skin_thickness,
                               insulin, bmi, dpf, age]])
 
+        # Scale and predict
         scaled = scaler.transform(features)
         prediction = model.predict(scaled)[0]
 
@@ -53,10 +48,7 @@ def predict():
 
     except Exception as e:
         print("Error in /predict:", e)
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 
 if __name__ == "__main__":
