@@ -529,7 +529,7 @@
             
             try {
                 // Replace with your actual API endpoint
-                const apiEndpoint = `${import.meta.env.API_LINK}/predict`;
+                const apiEndpoint = `${import.meta.env.VITE_API_LINK}/predict`;
                 
                 // Send to API
                 const response = await fetch(apiEndpoint, {
