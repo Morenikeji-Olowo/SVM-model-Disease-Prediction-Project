@@ -975,3 +975,344 @@ footer {
     padding-top: 1rem;
     border-top: 1px solid var(--gray-medium);
 }
+
+/* Mobile Responsive CSS - Add to your existing styles.css */
+
+/* General Mobile Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    /* Navigation */
+    .navbar .container {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        display: none;
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 12px 15px;
+        border-radius: 6px;
+        background: #f8f9fa;
+    }
+    
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    
+    .nav-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #333;
+        margin: 3px 0;
+        border-radius: 2px;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 80px 0 60px;
+        min-height: auto;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Features Section */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .feature-card {
+        padding: 25px;
+    }
+    
+    /* Form Section */
+    .form-container {
+        flex-direction: column;
+    }
+    
+    .form-info {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .prediction-form {
+        width: 100%;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+    }
+    
+    /* Process Cards */
+    .process-cards {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .process-card {
+        padding: 25px;
+    }
+    
+    /* Modules Section */
+    .modules-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .module-card {
+        padding: 25px;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .cta-content {
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-content .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+    }
+    
+    .footer-column {
+        width: 100%;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 0;
+    }
+}
+
+/* Tablet Adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        width: 90%;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .process-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .modules-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
+
+/* Small Mobile Adjustments */
+@media (max-width: 480px) {
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+    }
+    
+    /* Sections */
+    .section {
+        padding: 50px 0;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Form Elements */
+    .form-group label {
+        font-size: 0.95rem;
+    }
+    
+    .form-group input {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+    
+    .form-result {
+        padding: 20px;
+    }
+    
+    /* Process Cards */
+    .process-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Footer */
+    .footer-logo .logo-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Landscape Mode Adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 60px 0;
+    }
+    
+    .nav-links {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+}
+
+/* Utility Classes for Mobile */
+@media (max-width: 768px) {
+    .full-width {
+        width: 100%;
+    }
+    
+    .text-center-mobile {
+        text-align: center;
+    }
+    
+    .hide-on-mobile {
+        display: none;
+    }
+    
+    .show-on-mobile {
+        display: block;
+    }
+}
+
+/* Ensure Images/Backgrounds Scale Properly */
+img, 
+.hero-background {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+}
+
+/* Touch-friendly Tap Targets */
+@media (max-width: 768px) {
+    .btn,
+    .nav-links a,
+    input[type="submit"],
+    button {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+    
+    input,
+    select,
+    textarea {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+    }
+}
+
+/* Smooth Mobile Animations */
+.nav-links {
+    transition: all 0.3s ease;
+}
+
+/* Fix for mobile form elements */
+.form-group input:focus {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+}
