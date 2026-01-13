@@ -164,8 +164,13 @@ a {
 .hero {
     position: relative;
     padding: 6rem 0 5rem;
+    min-height: 60vh; /* ensure hero has visible height */
+    display: flex;
+    align-items: center;
     color: white;
     overflow: hidden;
+    /* Fallback visible background in case gradient layers fail to render */
+    background: linear-gradient(135deg, rgba(26,77,62,0.95) 0%, rgba(46,92,74,0.95) 100%);
 }
 
 .hero-background {
@@ -175,7 +180,7 @@ a {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
-    z-index: -2;
+    z-index: -3;
 }
 
 .hero-overlay {
