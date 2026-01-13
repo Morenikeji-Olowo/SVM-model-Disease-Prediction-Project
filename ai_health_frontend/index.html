@@ -529,7 +529,7 @@
             
             try {
                 // Replace with your actual API endpoint
-                const apiEndpoint = 'YOUR_DIABETES_API_ENDPOINT_HERE';
+                const apiEndpoint = `${import.meta.env.API_LINK}/predict`;
                 
                 // Send to API
                 const response = await fetch(apiEndpoint, {
