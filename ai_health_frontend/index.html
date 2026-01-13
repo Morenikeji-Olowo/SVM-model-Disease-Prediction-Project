@@ -653,8 +653,8 @@ const formData = {
         // Function to display diabetes results from API
         function displayDiabetesResult(apiResult, statusElement, contentElement) {
             // Customize this based on your API response structure
-            const riskLevel = apiResult.prediction || apiResult.risk_level || 'Unknown';
-            const confidence = apiResult.confidence || apiResult.probability || 'N/A';
+            const riskLevel = apiResult.result || apiResult.risk_level || 'Unknown';
+            const confidence = apiResult.result || apiResult.probability || 'N/A';
             const details = apiResult.details || '';
             const recommendations = apiResult.recommendations || [];
             
