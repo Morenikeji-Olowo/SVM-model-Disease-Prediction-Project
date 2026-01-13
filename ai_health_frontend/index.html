@@ -544,7 +544,8 @@ const apiEndpoint = "https://svm-model-disease-prediction-project.onrender.com/p
                     throw new Error(`API error: ${response.status}`);
                 }
                 
-                const result = await response.json();
+                const data = await response.json();
+                const result = data.result;
                 
                 displayDiabetesResult(result, statusElement, contentElement);
                 
