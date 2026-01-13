@@ -650,56 +650,27 @@ const formData = {
             }
         });
         
-        // Function to display diabetes results from API
-        function displayDiabetesResult(apiResult, statusElement, contentElement) {
-            // Customize this based on your API response structure
-            const riskLevel = apiResult.result || apiResult.risk_level || 'Unknown';
-            const confidence = apiResult.result || apiResult.probability || 'N/A';
-            const details = apiResult.details || '';
-            const recommendations = apiResult.recommendations || [];
-            
-            let riskColor = 'moderate';
-            if (riskLevel.toLowerCase().includes('high')) riskColor = 'high';
-            if (riskLevel.toLowerCase().includes('low')) riskColor = 'low';
-            
-            statusElement.textContent = riskLevel;
-            statusElement.className = `result-status ${riskColor}`;
-            
-            let recommendationsHtml = '';
-            if (recommendations.length > 0) {
-                recommendationsHtml = `
-                    <div class="recommendations">
-                        <h5>Recommendations:</h5>
-                        <ul>
-                            ${recommendations.map(rec => `<li>${rec}</li>`).join('')}
-                        </ul>
-                    </div>
-                `;
-            }
-            
-            contentElement.innerHTML = `
-                <div class="risk-meter">
-                    <div class="meter-bar">
-                        <div class="meter-fill" style="width: ${confidence}%"></div>
-                    </div>
-                    <div class="meter-labels">
-                        <span>Low</span>
-                        <span>Moderate</span>
-                        <span>High</span>
-                    </div>
-                </div>
-                <p>Based on your health indicators, our AI model indicates: <strong>${riskLevel}</strong></p>
-                <p>Confidence: <strong>${confidence}%</strong></p>
-                ${details ? `<p>${details}</p>` : ''}
-                ${recommendationsHtml}
-                <p class="disclaimer">Note: This assessment is for informational purposes only. Please consult with a medical professional for accurate diagnosis.</p>
-            `;
-            
-            // Scroll to result
-            const resultElement = statusElement.closest('.form-result') || document.getElementById('diabetesResult');
-            resultElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-        
+function displayDiabetesResult(apiResult, statusElement, contentElement) {
+    const riskText = apiResult.result;
+    const prediction = apiResult.prediction; 
+
+    const riskColor = prediction === 1 ? 'high' : 'low';
+
+    statusElement.textContent = riskText;
+    statusElement.className = `result-status ${riskColor}`;
+
+    contentElement.innerHTML = `
+        <p>
+            Based on your health indicators, our AI model predicts:
+            <strong>${riskText}</strong>
+        </p>
+        <p class="disclaimer">
+            Note: This prediction is for informational purposes only.
+            Please consult a medical professional for diagnosis.
+        </p>
+    `;
+}
+
         // Function to display cancer results from API
         function displayCancerResult(apiResult, statusElement, contentElement, resultElement) {
             // Customize this based on your API response structure
