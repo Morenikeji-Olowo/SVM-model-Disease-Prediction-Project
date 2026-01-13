@@ -651,23 +651,22 @@ const formData = {
         });
         
 function displayDiabetesResult(apiResult, statusElement, contentElement) {
-    const riskText = apiResult.result;
-    const prediction = apiResult.prediction; 
+    if (!apiResult || apiResult.success !== true) {
+        statusElement.textContent = 'Error';
+        statusElement.className = 'result-status warning';
+        contentElement.innerHTML = '<p>Prediction failed.</p>';
+        return;
+    }
 
-    const riskColor = prediction === 1 ? 'high' : 'low';
+    const predictionText = apiResult.result; // ← THIS is the key
 
-    statusElement.textContent = riskText;
-    statusElement.className = `result-status ${riskColor}`;
+    statusElement.textContent = 'Prediction Complete';
+    statusElement.className = 'result-status success';
 
     contentElement.innerHTML = `
-        <p>
-            Based on your health indicators, our AI model predicts:
-            <strong>${riskText}</strong>
-        </p>
-        <p class="disclaimer">
-            Note: This prediction is for informational purposes only.
-            Please consult a medical professional for diagnosis.
-        </p>
+        <p><strong>${predictionText}</strong></p>
+        <p><small>Note: This prediction is for informational purposes only.
+        Please consult a medical professional for diagnosis.</small></p>
     `;
 }
 
