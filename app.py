@@ -8,6 +8,13 @@ app = Flask(__name__)
 # ENABLE CORS
 CORS(app)
 
+@app.after_request
+def add_cors_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "vercel.com/morenikeji-olowos-projects/svm/6x7Cnf5nBhouzZSTL1hBgnDDFk2w"
+    response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+    return response
+
 model = joblib.load("svm_diabetes_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
