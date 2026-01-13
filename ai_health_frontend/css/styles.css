@@ -976,16 +976,37 @@ footer {
     border-top: 1px solid var(--gray-medium);
 }
 
-/* Mobile Responsive CSS - Add to your existing styles.css */
+/* RESPONSIVE DESIGN - OPTIMIZED VERSION */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .process-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
 
-/* General Mobile Adjustments */
+/* Tablet and Mobile Navigation */
 @media (max-width: 768px) {
     .container {
-        width: 100%;
         padding: 0 20px;
     }
     
-    /* Navigation */
+    /* Navigation - Fixed */
     .navbar .container {
         padding: 15px 20px;
     }
@@ -993,18 +1014,18 @@ footer {
     .nav-links {
         position: fixed;
         top: 70px;
-        left: 0;
+        left: -100%;
         width: 100%;
-        background: white;
         flex-direction: column;
+        background-color: var(--primary-dark);
         padding: 20px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        display: none;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
         z-index: 1000;
     }
     
     .nav-links.active {
-        display: flex;
+        left: 0;
     }
     
     .nav-links li {
@@ -1016,21 +1037,28 @@ footer {
         display: block;
         padding: 12px 15px;
         border-radius: 6px;
-        background: #f8f9fa;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+    
+    .nav-links a.active {
+        background: rgba(255, 255, 255, 0.2);
     }
     
     .nav-toggle {
         display: flex;
         flex-direction: column;
         cursor: pointer;
+        z-index: 1001;
     }
     
     .nav-toggle span {
         width: 25px;
         height: 3px;
-        background: #333;
+        background-color: white;
         margin: 3px 0;
         border-radius: 2px;
+        transition: var(--transition);
     }
     
     /* Hero Section */
@@ -1057,6 +1085,7 @@ footer {
     .hero-buttons .btn {
         width: 100%;
         text-align: center;
+        margin: 0;
     }
     
     /* Features Section */
@@ -1069,11 +1098,7 @@ footer {
         padding: 25px;
     }
     
-    /* Form Section */
-    .form-container {
-        flex-direction: column;
-    }
-    
+    /* Form Section - Fixed */
     .form-info {
         width: 100%;
         margin-bottom: 30px;
@@ -1081,6 +1106,7 @@ footer {
     
     .prediction-form {
         width: 100%;
+        padding: 1.5rem;
     }
     
     .form-grid {
@@ -1117,6 +1143,11 @@ footer {
         padding: 25px;
     }
     
+    .module-card .btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
     /* CTA Section */
     .cta-section {
         padding: 60px 0;
@@ -1124,7 +1155,7 @@ footer {
     
     .cta-content {
         text-align: center;
-        padding: 30px;
+        padding: 30px 20px;
     }
     
     .cta-content h2 {
@@ -1159,38 +1190,30 @@ footer {
         gap: 15px;
         padding: 20px 0;
     }
-}
-
-/* Tablet Adjustments */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .container {
-        width: 90%;
+    
+    /* Touch-friendly Tap Targets */
+    .btn,
+    .nav-links a,
+    input[type="submit"],
+    button {
+        min-height: 44px;
+        padding: 12px 20px;
     }
     
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .form-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .process-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .modules-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .footer-links {
-        flex-wrap: wrap;
+    input,
+    select,
+    textarea {
+        font-size: 16px; /* Prevents iOS zoom on focus */
     }
 }
 
 /* Small Mobile Adjustments */
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     /* Hero Section */
+    .hero {
+        padding: 60px 0 40px;
+    }
+    
     .hero-content h1 {
         font-size: 1.8rem;
     }
@@ -1203,6 +1226,10 @@ footer {
     /* Sections */
     .section {
         padding: 50px 0;
+    }
+    
+    h1 {
+        font-size: 2rem;
     }
     
     h2 {
@@ -1228,6 +1255,10 @@ footer {
     }
     
     /* Process Cards */
+    .process-card {
+        padding: 20px;
+    }
+    
     .process-card h3 {
         font-size: 1.2rem;
     }
@@ -1236,12 +1267,23 @@ footer {
     .footer-logo .logo-text {
         font-size: 1.5rem;
     }
+    
+    .footer-logo p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Fix for iOS Safari */
 @supports (-webkit-touch-callout: none) {
     .hero {
         min-height: -webkit-fill-available;
+    }
+    
+    /* Fix for mobile viewport height */
+    .hero,
+    .section,
+    .cta-section {
+        min-height: auto;
     }
 }
 
@@ -1256,29 +1298,55 @@ footer {
         max-height: 200px;
         overflow-y: auto;
     }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .hero-buttons .btn {
+        width: auto;
+        flex: 1;
+        min-width: 150px;
+    }
 }
 
-/* Utility Classes for Mobile */
-@media (max-width: 768px) {
-    .full-width {
-        width: 100%;
+/* Tablet Adjustments (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        width: 90%;
+        max-width: 100%;
+        padding: 0 30px;
     }
     
-    .text-center-mobile {
-        text-align: center;
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
-    .hide-on-mobile {
-        display: none;
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
-    .show-on-mobile {
-        display: block;
+    .modules-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    
+    .footer-column {
+        flex: 1 0 200px;
     }
 }
 
 /* Ensure Images/Backgrounds Scale Properly */
-img, 
+img,
 .hero-background {
     max-width: 100%;
     height: auto;
@@ -1287,32 +1355,73 @@ img,
 /* Prevent horizontal scroll */
 body {
     overflow-x: hidden;
+    width: 100%;
 }
 
-/* Touch-friendly Tap Targets */
-@media (max-width: 768px) {
-    .btn,
-    .nav-links a,
-    input[type="submit"],
-    button {
-        min-height: 44px;
-        padding: 12px 20px;
+/* Fix for mobile form elements focus */
+.form-group input:focus {
+    transform: none; /* Remove scale on mobile */
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(58, 124, 94, 0.1);
+}
+
+/* Smooth Mobile Animations - Fixed */
+.nav-links {
+    transition: left 0.3s ease;
+}
+
+/* Button hover effects for mobile */
+@media (hover: hover) and (pointer: fine) {
+    .btn:hover {
+        transform: translateY(-3px);
     }
     
-    input,
-    select,
-    textarea {
-        font-size: 16px; /* Prevents iOS zoom on focus */
+    .feature-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .module-card:hover {
+        transform: translateY(-10px);
     }
 }
 
-/* Smooth Mobile Animations */
-.nav-links {
-    transition: all 0.3s ease;
+/* Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .btn:active {
+        transform: scale(0.98);
+    }
+    
+    .feature-card:active {
+        transform: scale(0.99);
+    }
+    
+    .module-card:active {
+        transform: scale(0.99);
+    }
 }
 
-/* Fix for mobile form elements */
-.form-group input:focus {
-    transform: scale(1.02);
-    transition: transform 0.2s ease;
+/* Utility Classes for Mobile */
+.full-width {
+    width: 100%;
+}
+
+.text-center-mobile {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+    
+    .show-on-mobile {
+        display: block !important;
+    }
+    
+    /* Center text on mobile for better readability */
+    .hero-content,
+    .cta-content,
+    .section-subtitle {
+        text-align: center;
+    }
 }
