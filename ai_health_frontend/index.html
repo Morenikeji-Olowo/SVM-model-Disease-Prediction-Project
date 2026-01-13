@@ -513,16 +513,17 @@ const apiEndpoint = "https://svm-model-disease-prediction-project.onrender.com/p
             }
             
             // Collect form data
-            const formData = {
-                pregnancies: document.getElementById('pregnancies').value,
-                glucose: document.getElementById('glucose').value,
-                blood_pressure: document.getElementById('blood-pressure').value,
-                skin_thickness: document.getElementById('skin-thickness').value,
-                insulin: document.getElementById('insulin').value,
-                bmi: document.getElementById('bmi').value,
-                diabetes_pedigree_function: document.getElementById('dpf').value,
-                age: document.getElementById('age').value
-            };
+const formData = {
+    pregnancies: document.getElementById('pregnancies').value,
+    glucose: document.getElementById('glucose').value,
+    blood_pressure: document.getElementById('blood-pressure').value,
+    skin_thickness: document.getElementById('skin-thickness').value,
+    insulin: document.getElementById('insulin').value,
+    bmi: document.getElementById('bmi').value,
+    diabetes_pedigree_function: document.getElementById('dpf').value,
+    age: document.getElementById('age').value
+};
+
             
             // Show loading state
             statusElement.textContent = 'Analyzing...';
@@ -694,6 +695,7 @@ const apiEndpoint = "https://svm-model-disease-prediction-project.onrender.com/p
             `;
             
             // Scroll to result
+            const resultElement = statusElement.closest('.form-result') || document.getElementById('diabetesResult');
             resultElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
         
