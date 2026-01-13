@@ -547,9 +547,8 @@ const formData = {
                 }
                 
                 const data = await response.json();
-                const result = data.result;
                 
-                displayDiabetesResult(result, statusElement, contentElement);
+                displayDiabetesResult(data, statusElement, contentElement);
                 
             } catch (error) {
                 console.error('Error:', error);
